@@ -1,0 +1,13 @@
+POST http://localhost:8080/api/echo
+Content-Type: application/json
+
+"hello hello"
+
+###
+GET http://localhost:8080/api/cats
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+

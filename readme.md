@@ -1,0 +1,36 @@
+# Hello!
+
+This repository was created so that you could get a jump start on implementing your project.
+
+This readme assumes you're using the professional edition of Intellij which should handle a lot of details for you.
+Anything you need to know though can likely be found on the [maven site](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
+
+Intellij tips
+- Edit your run configuration (upper left corner, dropdown arrow, 'Edit configurations...') to hot swap classes on update
+and to update classes and resources on frame deactivation. This will cause your server to live reload whenever you switch 
+from intellij to something.
+- In the Controllers/ folder, there's a `rest-api.http` file. Using intellij you can run the requests in it to test the api
+
+# Organization
+- app/ - Contains all frontend code. When deploying this project it needs to be built using `npm run build`
+- src/ - Contains all server code (java, spring boot)
+  - controllers/ - Controllers that receive requests
+  - models/ Models used by the controllers
+  - Note: Best practice is to group code based on subject area, eg we should have a cats/ package that then contains
+  a controller/ and models/ underneath that are solely related to the cats/ domain. We don't do that here because the domain 
+  hasn't been determined, and for a minimal work poc, this grouping practice may be overkill.
+
+# Technologies
+- Lombok - Java preprocessor, provides utility annotations that make developping in Java more pleasant  -
+https://projectlombok.org/
+- Spring boot - Java server framework
+  - H2 database - inmemory database, is torn down when the app closes. I suggest modifying the `application.properties` to save to a file or change to another database
+- AssertJ - Assertion library that provides extra chainable assertions on top of JUnit
+- ReactJS - Web frontend rending library
+
+# To Run
+- `npm install` in app/
+- Run both the Spring server and the react server. React is already set to proxy to 8080 if its server
+receives a request for a path that isn't a react file. 
+To start react: `cd app && npm start` or open the package.json and click the green arrow next to "npm start"
+To start spring: `./mvnw spring-boot:run` or run it from the top right corner of your Intellij.
