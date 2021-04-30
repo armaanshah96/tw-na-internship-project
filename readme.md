@@ -1,9 +1,9 @@
 # Hello!
 
-This repository was created so that you could get a jump start on implementing your project.
+This repository was created as baseline for your project.
 
 This readme assumes you're using the professional edition of Intellij which should handle a lot of details for you.
-Anything you need to know though can likely be found on the [maven site](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
+Anything you need to know  can likely be found on the [maven site](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
 
 Intellij tips
 - Edit your run configuration (upper left corner, dropdown arrow, 'Edit configurations...') to hot swap classes on update
@@ -21,12 +21,14 @@ from intellij to something.
   hasn't been determined, and for a minimal work poc, this grouping practice may be overkill.
 
 # Technologies
-- Lombok - Java preprocessor, provides utility annotations that make developping in Java more pleasant  -
+- Lombok - Java preprocessor, provides utility annotations that make developing in Java more pleasant  -
 https://projectlombok.org/
 - Spring boot - Java server framework
-  - H2 database - inmemory database, is torn down when the app closes. I suggest modifying the `application.properties` to save to a file or change to another database
+  - H2 database - in-memory database, is torn down when the app closes. I suggest modifying the `application.properties` to save to a file or change to another database
 - AssertJ - Assertion library that provides extra chainable assertions on top of JUnit
-- ReactJS - Web frontend rending library
+- ReactJS - Web frontend library
+- React Testing Library - React testing utility library 
+- Jest - React test runner and assertion library
 
 # To Run
 - `npm install` in app/
