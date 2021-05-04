@@ -6,7 +6,7 @@ import catService from '../services/catService'
 test.only('Calls api when see cat button is clicked', () => {
   render(<Cat />);
   // mocks the api call so you do not call it directly when
-  catService.getCatPic = jest.fn().mockResolvedValue(()=>"")
+  catService.getCatPic = jest.fn().mockResolvedValue(Promise.resolve())
 
   const button = screen.getByText(/cat pictures/i);
   expect(button).toBeInTheDocument();
