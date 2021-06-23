@@ -27,7 +27,7 @@ https://projectlombok.org/
 
 # To Run
 Install React
-- `cd /app`
+- `cd ./app`
 - `npm install`
 
 Run both the Spring server and the react server. React is already set to proxy to 8080 if its server
