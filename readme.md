@@ -53,3 +53,6 @@ Anything you need to know  can likely be found on the [maven site](https://maven
   and to update classes and resources on frame deactivation. This will cause your server to live reload whenever you switch
   from intellij to something.
 - In the Controllers/ folder, there's a `rest-api.http` file. Using intellij you can run the requests in it to test the api
+
+# Team Members
+Devon 
