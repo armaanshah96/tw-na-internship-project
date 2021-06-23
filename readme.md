@@ -55,5 +55,6 @@ Anything you need to know  can likely be found on the [maven site](https://maven
 - In the Controllers/ folder, there's a `rest-api.http` file. Using intellij you can run the requests in it to test the api
 
 # Team Members
-Devon 
-Martin
+- Devon
+- Martin
+- Abdi
