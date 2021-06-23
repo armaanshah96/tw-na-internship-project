@@ -27,7 +27,7 @@ https://projectlombok.org/
 
 # To Run
 Install React
-- `cd /app`
+- `cd ./app`
 - `npm install`
 
 Run both the Spring server and the react server. React is already set to proxy to 8080 if its server
@@ -57,4 +57,7 @@ Anything you need to know  can likely be found on the [maven site](https://maven
 # Team Members
 Devon 
 Martin
+- Devon
+- Martin
+- Abdi
 Alec
