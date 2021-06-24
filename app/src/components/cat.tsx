@@ -12,7 +12,7 @@ function Cat() {
       <div >
         {catPicture && <img src={catPicture.file} className={"App-Cat"} alt={"A cat !"} />}
         <p>Click here to see a cat :3</p>
-        <button onClick={getCatData}>Cat Pictures!</button>
+        <button onClick={getCatData}>Know Your Rights</button>
 
     </div>
     );
