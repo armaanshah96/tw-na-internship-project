@@ -8,4 +8,4 @@ test.only('Assert KYR Button exists', () => {
 
   const button = screen.getByText(/know your rights/i);
   expect(button).toBeInTheDocument();
-})
+});
