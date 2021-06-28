@@ -1,11 +1,10 @@
 import React from 'react';
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
-import Cat from './cat';
-import catService from '../services/catService'
+import TableOfContents from './TableOfContents';
 
-test.only('Assert KYR Button exists', () => {
-  render(<Cat />);
+test('Assert KYR Button exists', () => {
+  render(<TableOfContents />);
 
   const button = screen.getByText(/know your rights/i);
   expect(button).toBeInTheDocument();
@@ -13,7 +12,7 @@ test.only('Assert KYR Button exists', () => {
 });
 
 test('checks if content is present after clicking KYR button and that the button is no longer present', () => {
-  render(<Cat />);
+  render(<TableOfContents />);
   const button = screen.getByText(/know your rights/i);
   userEvent.click(button)
 
