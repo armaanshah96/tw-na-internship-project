@@ -1,7 +1,9 @@
 import React from 'react';
 
 function KnowYourRights() {
-    return <p>xyza</p>;
+    return <ul>
+        <li>Miranda Rights</li>
+    </ul>;
 }
 
 export default KnowYourRights;
