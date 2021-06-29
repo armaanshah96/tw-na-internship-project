@@ -19,6 +19,7 @@ this means brew has not been correctly installed. Run the command `brew install 
 
 - If you are connected to the database, after running the `psql` command, enter the command `\dt` to display the existing tables in the database.
   
+-  Enter Password from the Heroku credentials 
 ##2. Download DataGrip
 Congrats – you just connected to the DB from your command line! But since terminal isn't interactive, 
 it'll be much easier to access/edit the database using an IDE. Let's use DataGrip – [Click here to download](https://www.jetbrains.com/datagrip/download/#section=mac)
@@ -28,3 +29,8 @@ For more instructions on connecting the DB to DataGrip, [watch this video.](http
 
 ##3. Host the database on Heroku
 Will need to set up database (aka DB) to connect to the backend
+
+## Database Installation in IntelliJ
+In order to better understand the process of how to connect PostgreSQL BD in IntelliJ
+follow the instructions [in this video](https://www.youtube.com/watch?v=D-WoteCPi14&t=211s) 
+-Note: You will need the Heroku credentials in order be able to deploy your DB in Heroku.
