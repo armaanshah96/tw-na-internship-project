@@ -54,6 +54,34 @@ Frontend:
 Backend:
 TBD
 
+
+#Database initialization steps
+
+##1. Create a Heroku account
+In order for you have access to Heroku, you will need to create an account firs. Make sure to use your TW credentials.
+Go to this link and create a Heroku account [Heroku](https://id.heroku.com/login).
+
+##2. Get started as a Collaborator in Heroku
+- Once you have created your Heroku account. You will need to install Heroku CLI. Insert this command in your terminal:
+```bash
+$ brew tap heroku/brew && brew install heroku
+```
+
+- When you are ready to deploy the App. Use the following command:
+```bash
+git commit -a -m "Description of the changes I made"
+```
+- If you need extra information about the app. Insert the following command:
+```bash
+heroku info -a tw-intern-project
+```
+
+If you need extra information on about how to get started as a collaborator. You can find extra information [here](https://devcenter.heroku.com/articles/collab).
+
+## 3. Database Installation in IntelliJ
+In order to better understand the process of how to connect PostgreSQL DB in IntelliJ
+follow the instructions [in this video](https://www.youtube.com/watch?v=D-WoteCPi14&t=211s)
+-Note: You will need the Heroku credentials in order be able to deploy your database in Heroku.
 # Intellij tips
 This readme assumes you're using the professional edition of Intellij which should handle a lot of details for you.
 Anything you need to know  can likely be found on the [maven site](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).

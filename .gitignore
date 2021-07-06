@@ -11,3 +11,6 @@ app/package-lock.json
 log/
 target/
 
+# This prevents the private information in "application-local.properties" to be pushed to GitHubb
+# Enviromental Variables i.e. Username, Password
+src/main/resources/application-local.properties
