@@ -10,29 +10,14 @@ describe('KYR Button', ()=>{
   });
 
   test('Assert KYR Button exists', () => {
-
-
-
     expect(button).toBeInTheDocument();
 
   });
 
-  test('Situation: selecting KYR button and then targeted user button appears and once clicked shows content and no buttons', () => {
+  test('Assert KYR Button does not exist after button click', () => {
     userEvent.click(button)
-    const targeted_user=screen.getByText(/Targeted User/i);
-    expect(targeted_user).toBeInTheDocument()
-    userEvent.click(targeted_user)
-    const content= screen.getByText(/Miranda Rights/i);
-    expect(content).toBeInTheDocument()
-  });
+    expect(button).not.toBeInTheDocument();
 
-  test('Situation: selecting KYR button and then community member user button appears and once clicked shows content and no buttons', () => {
-    userEvent.click(button)
-    const communityM_user=screen.getByText(/Community Member User/i);
-    expect(communityM_user).toBeInTheDocument()
-    userEvent.click(communityM_user)
-    const content= screen.getByText(/Miranda Rights/i);
-    expect(content).toBeInTheDocument()
   });
 
 })
