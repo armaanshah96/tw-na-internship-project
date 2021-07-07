@@ -25,7 +25,7 @@ https://projectlombok.org/
 - npm and node (https://nodejs.org/en/download/) or brew install npm
 - set project SDK settings to java (File->Project Structure, change Project SDK to Java (11)
 
-# To Run
+# To Run App
 Install React
 - `cd ./app`
 - `npm install`
@@ -44,6 +44,15 @@ To start spring:
   - navigate to demo app (src/main/java/com/example/demo/DemoApplication.java)
   - right-click on DemoApplication and click Run
   
+# To Run Tests
+Frontend: 
+- in CLI: `cd app && npm test`
+- in Intellij:
+  - open app/src/App.test.tsx, select the green arrow next to the first test
+  - open all component tests (app/src/components/[xxx].test.tsx), select the green arrow next to the first test
+
+Backend:
+TBD
 
 # Intellij tips
 This readme assumes you're using the professional edition of Intellij which should handle a lot of details for you.
