@@ -58,30 +58,79 @@ TBD
 #Database initialization steps
 
 ##1. Create a Heroku account
-In order for you have access to Heroku, you will need to create an account firs. Make sure to use your TW credentials.
-Go to this link and create a Heroku account [Heroku](https://id.heroku.com/login).
-
-##2. Get started as a Collaborator in Heroku
-- Once you have created your Heroku account. You will need to install Heroku CLI. Insert this command in your terminal:
-```bash
-$ brew tap heroku/brew && brew install heroku
-```
-
-- When you are ready to deploy the App. Use the following command:
-```bash
-git commit -a -m "Description of the changes I made"
-```
-- If you need extra information about the app. Insert the following command:
-```bash
-heroku info -a tw-intern-project
-```
-
-If you need extra information on about how to get started as a collaborator. You can find extra information [here](https://devcenter.heroku.com/articles/collab).
+- In order for you have access to Heroku, you will need to create an account first.
+- This will help you gain access to the Heroku Database credentials.
+- To create Heroku account make sure to use your TW credentials. Go to this link and create a Heroku account [Heroku](https://id.heroku.com/login).
 
 ## 3. Database Installation in IntelliJ
 In order to better understand the process of how to connect PostgreSQL DB in IntelliJ
 follow the instructions [in this video](https://www.youtube.com/watch?v=D-WoteCPi14&t=211s)
 -Note: You will need the Heroku credentials in order be able to deploy your database in Heroku.
+1.Navigate to pom.xml add under the PostgreSQL comment the following:
+
+    <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+After adding the dependencies make sure to run the next command in your terminal:
+- ./mvn install
+
+After installation has been completed, follow the next set of steps:
+
+1.Open intellij.
+
+2.Open Invalidate Caches under "File" at the very top of your screen.
+
+3.Make sure "clear downloaded shared indexes” is selected.
+
+4.Click on "Invalidate and Restart."
+
+Note: wait for application to restart.
+
+##Create application-local.properties file
+- Create a file called application-local.properties that is similar to application.properties in (src/main/java/resources)
+- Paste the following code in your application-local.properties file and enter your Heroku credentials which are located in the tw-intern-project under settings and open configvars.
+```bash
+spring.datasource.url= XXXXXX
+spring.datasource.username= XXXXX
+spring.datasource.password= XXXXXX
+```
+
+- After adding your Heroku credentials, make sure to copy the path of the applications-local.properties file
+and paste it into the ".gitignore" file.
+- Then run DemoApplication.
+
+##Adding env variables to IntelliJ
+- click on edit configurations
+- Make sure to select springboot -> DemoApplication
+- Go to environment variables and click "Edit Environment Variables'
+- Then add Heroku ConfigVars
+
+Note: Make sure to add all of the key and value variables.
+
+###After adding evn variables
+- scroll down to "on update action" and set it to "Update classes and resources"
+- scroll down to "on frame deactivation" and set it to "Update classes and resources"
+- Then on "Active profiles" type "local"
+- Click on "Apply" and "Ok"
+
+##Create test table to make sure backend and database are connected
+- On the DemoApplication file, under the "Run" method. Include the following code:
+```bash
+String sql = "CREATE TABLE test(Your First Name) (name int)";
+```  
 # Intellij tips
 This readme assumes you're using the professional edition of Intellij which should handle a lot of details for you.
 Anything you need to know  can likely be found on the [maven site](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).

@@ -17,18 +17,15 @@ public class DemoApplication implements CommandLineRunner{
 	}
 
 	/**
-	 * Simple example of how to add a row
+	 * Simple example of how to create a table in Heroku Database
 	 * Connecting the backend to the database
 	 * @param args
 	 * @throws Exception
 	 */
 	@Override
 	public void run(String... args) throws Exception{
-		String sql = "INSERT INTO test (name) VALUES ('Martinssa')";
+		String sql = "CREATE TABLE testTable (name int)";
 
 		int rows = jdcTemplate.update(sql);
-		if(rows > 0){
-			System.out.println("A new row has been inserted");
-		}
 	}
 }
