@@ -52,7 +52,9 @@ Frontend:
   - open all component tests (app/src/components/[xxx].test.tsx), select the green arrow next to the first test
 
 Backend:
-TBD
+- in CLI: `./mvnw test` (note: make sure you are in the top level of the project)
+- in Intellij:
+  - navigate to file to test, select green arrow next to test
 
 
 #Database initialization steps

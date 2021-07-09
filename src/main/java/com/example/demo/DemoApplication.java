@@ -1,18 +1,18 @@
 package com.example.demo;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @SpringBootApplication
-public class DemoApplication implements CommandLineRunner{
+public class DemoApplication implements CommandLineRunner {
+
 	@Autowired
-	private JdbcTemplate jdcTemplate;
+	private JdbcTemplate jdbcTemplate;
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
@@ -24,8 +24,8 @@ public class DemoApplication implements CommandLineRunner{
 	 */
 	@Override
 	public void run(String... args) throws Exception{
-		String sql = "CREATE TABLE testTable (name int)";
+		String sql = "CREATE TABLE if NOT EXISTS testTable (name int)";
 
-		int rows = jdcTemplate.update(sql);
+		int rows = jdbcTemplate.update(sql);
 	}
 }

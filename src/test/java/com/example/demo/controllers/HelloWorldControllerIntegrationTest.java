@@ -23,7 +23,7 @@ class HelloWorldControllerIntegrationTest {
 
     @Test
     public void shouldReturnSentMessage() throws Exception {
-        mockMvc.perform(get("/echo").content("Hello!"))
+        mockMvc.perform(get("/api/echo").content("Hello!"))
                 .andExpect(status().isOk())
                 .andExpect(content().string(containsString("Hello")));
     }
