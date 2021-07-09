@@ -3,7 +3,7 @@ import './App.css';
 import TableOfContents from './components/TableOfContents'
 function App() {
     return (
-        <div className="App">
+        <div data-testid="custom-element" className="App">
           <header className="App-header">
             <TableOfContents />
           </header>

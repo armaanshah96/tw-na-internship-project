@@ -2,26 +2,26 @@ import React from "react";
 import {render, screen} from '@testing-library/react';
 import SituationalQuestions from "./SituationalQuestions";
 import userEvent from "@testing-library/user-event";
-let targeted_User:any;
-let communityM_User:any;
+let targetedUser:any;
+let communityMUser:any;
 beforeEach(()=> {
     render(<SituationalQuestions/>);
-    targeted_User=screen.getByText(/Targeted User/i)
-    communityM_User=screen.getByText(/Community Member User/i)
+    targetedUser=screen.getByText(/Targeted User/i)
+    communityMUser=screen.getByText(/Community Member User/i)
 
 });
-test('Situation: selecting KYR button and then targeted user button appears and once clicked shows content and no buttons', () => {
-    expect(targeted_User).toBeInTheDocument()
-    userEvent.click(targeted_User)
-    expect(targeted_User).not.toBeInTheDocument()
+test('Situation: Clicking targeted user button shows content and removes button', () => {
+    expect(targetedUser).toBeInTheDocument()
+    userEvent.click(targetedUser)
+    expect(targetedUser).not.toBeInTheDocument()
     const content= screen.getByText(/Miranda Rights/i);
     expect(content).toBeInTheDocument()
 });
 
-test('Situation: selecting KYR button and then community member user button appears and once clicked shows content and no buttons', () => {
-    expect(communityM_User).toBeInTheDocument()
-    userEvent.click(communityM_User)
-    expect(communityM_User).not.toBeInTheDocument()
+test('Situation: Clicking community member button shows content and removes button', () => {
+    expect(communityMUser).toBeInTheDocument()
+    userEvent.click(communityMUser)
+    expect(communityMUser).not.toBeInTheDocument()
     const content= screen.getByText(/Miranda Rights/i);
     expect(content).toBeInTheDocument()
 });

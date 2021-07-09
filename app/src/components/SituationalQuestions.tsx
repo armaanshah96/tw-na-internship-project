@@ -2,16 +2,15 @@ import React, {useState} from 'react';
 import KnowYourRights from "./KnowYourRights";
 
 function SituationalQuestions() {
-  const [showUsers,setShowUsers]=useState(false)
+  const [showUsers,setShowUsers]=useState(true)
   function clickHandlerUsers(){
-    setShowUsers(true);
+    setShowUsers(false);
   }
-    return (<div>
-          {(showUsers== false )?<button onClick={clickHandlerUsers}>Community Member User</button>:null}
-          {(showUsers== false)?<button onClick={clickHandlerUsers}>Targeted User</button>:null}
-          { showUsers && <KnowYourRights/>}
-        </div>
+    return (<>
+          {showUsers?<><button onClick={clickHandlerUsers}>Community Member User</button>
+            <button onClick={clickHandlerUsers}>Targeted User</button></>:<KnowYourRights/>}
+        </>
     )
-}
+};
 
 export default SituationalQuestions;
