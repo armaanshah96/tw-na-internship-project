@@ -21,7 +21,7 @@ https://projectlombok.org/
 - React Testing Library - React testing utility library 
 - Jest - React test runner and assertion library
 
-#Pre-Requisites:
+# Pre-Requisites:
 - npm and node (https://nodejs.org/en/download/) or brew install npm
 - set project SDK settings to java (File->Project Structure, change Project SDK to Java (11)
 
@@ -57,18 +57,18 @@ Backend:
   - navigate to file to test, select green arrow next to test
 
 
-#Database initialization steps
+#m Database initialization steps
 
-##1. Create a Heroku account
+## 1. Create a Heroku account
 - In order for you have access to Heroku, you will need to create an account first.
 - This will help you gain access to the Heroku Database credentials.
 - To create Heroku account make sure to use your TW credentials. Go to this link and create a Heroku account [Heroku](https://id.heroku.com/login).
 
-## 3. Database Installation in IntelliJ
+## 2. Database Installation in IntelliJ
 In order to better understand the process of how to connect PostgreSQL DB in IntelliJ
 follow the instructions [in this video](https://www.youtube.com/watch?v=D-WoteCPi14&t=211s)
 -Note: You will need the Heroku credentials in order be able to deploy your database in Heroku.
-1.Navigate to pom.xml add under the PostgreSQL comment the following:
+1. Navigate to pom.xml add under the PostgreSQL comment the following:
 
     <dependency>
     <groupId>org.springframework.boot</groupId>
