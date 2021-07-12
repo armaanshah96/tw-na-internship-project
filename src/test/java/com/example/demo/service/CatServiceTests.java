@@ -1,7 +1,7 @@
-package com.example.demo.services;
+package com.example.demo.service;
 
-import com.example.demo.models.Cat;
-import com.example.demo.repositories.CatRepository;
+import com.example.demo.model.Cat;
+import com.example.demo.repository.CatRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,6 +12,16 @@ import java.util.Arrays;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.*;
+
+/*
+Key concepts: mock, verify a method is called, stub, BeforeEach in tests
+New Terms: Mockito (mocking library)
+
+CHECKPOINT: What does `when(someObject.someMethod()).thenReturn(someReturnObject)` do? What is its purpose in the existing test?
+CHECKPOINT: Can you identify the "Arrange, Act, Assert" stages of the test?
+
+To go over together: why use a stub for `getMostGrumpyCat` test?
+ */
 
 @ExtendWith(MockitoExtension.class)
 public class CatServiceTests {

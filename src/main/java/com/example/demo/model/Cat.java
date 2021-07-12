@@ -1,10 +1,19 @@
-package com.example.demo.models;
+package com.example.demo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Objects;
+
+/*
+Key concepts: @Entity in Spring
+
+CHECKPOINT: What does @Entity do in the application? How is it used?
+
+To go over together: How this class is used
+ */
+
 
 @Entity
 public class Cat {

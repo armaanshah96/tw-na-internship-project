@@ -1,6 +1,6 @@
-package com.example.demo.controllers;
+package com.example.demo.controller;
 
-import com.example.demo.services.CatService;
+import com.example.demo.service.CatService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
