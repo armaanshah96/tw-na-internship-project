@@ -10,7 +10,7 @@ function TableOfContents(){
     }
     return(
         <div >
-            {(showContent == false)? <button onClick={clickHandler}>Know Your Rights</button>:null}
+            {(showContent === false)? <button onClick={clickHandler}>Know Your Rights</button>:null}
             {showContent && <KnowYourRights/>}
         </div>
     )
