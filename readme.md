@@ -87,7 +87,7 @@ follow the instructions [in this video](https://www.youtube.com/watch?v=D-WoteCP
         </dependency>
 
 After adding the dependencies make sure to run the next command in your terminal:
-- ./mvn install
+- ./mvnw install
 
 After installation has been completed, follow the next set of steps:
 
