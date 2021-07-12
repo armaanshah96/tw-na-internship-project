@@ -57,18 +57,18 @@ Backend:
   - navigate to file to test, select green arrow next to test
 
 
-#m Database initialization steps
+# Database initialization steps
 
-## 1. Create a Heroku account
+### 1. Create a Heroku account
 - In order for you have access to Heroku, you will need to create an account first.
 - This will help you gain access to the Heroku Database credentials.
 - To create Heroku account make sure to use your TW credentials. Go to this link and create a Heroku account [Heroku](https://id.heroku.com/login).
 
-## 2. Database Installation in IntelliJ
+### 2. Connect PostgreSQL DB in IntelliJ
 In order to better understand the process of how to connect PostgreSQL DB in IntelliJ
 follow the instructions [in this video](https://www.youtube.com/watch?v=D-WoteCPi14&t=211s)
--Note: You will need the Heroku credentials in order be able to deploy your database in Heroku.
-1. Navigate to pom.xml add under the PostgreSQL comment the following:
+ Note: You will need the Heroku credentials in order be able to deploy your database in Heroku.
+ - Navigate to pom.xml add under the PostgreSQL comment the following:
 
     <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -91,17 +91,17 @@ After adding the dependencies make sure to run the next command in your terminal
 
 After installation has been completed, follow the next set of steps:
 
-1.Open intellij.
+1. Open intellij.
 
-2.Open Invalidate Caches under "File" at the very top of your screen.
+2. Open Invalidate Caches under "File" at the very top of your screen.
 
-3.Make sure "clear downloaded shared indexes” is selected.
+3. Make sure "clear downloaded shared indexes” is selected.
 
-4.Click on "Invalidate and Restart."
+4. Click on "Invalidate and Restart."
 
-Note: wait for application to restart.
+- Note: wait for application to restart.
 
-##Create application-local.properties file
+### 3. Create application-local.properties file
 - Create a file called application-local.properties that is similar to application.properties in (src/main/java/resources)
 - Paste the following code in your application-local.properties file and enter your Heroku credentials which are located in the tw-intern-project under settings and open configvars.
 ```bash
@@ -114,21 +114,21 @@ spring.datasource.password= XXXXXX
 and paste it into the ".gitignore" file.
 - Then run DemoApplication.
 
-##Adding env variables to IntelliJ
+### 4. Add env variables to IntelliJ
 - click on edit configurations
 - Make sure to select springboot -> DemoApplication
 - Go to environment variables and click "Edit Environment Variables'
 - Then add Heroku ConfigVars
 
-Note: Make sure to add all of the key and value variables.
+Note: Make sure to add all the key and value variables.
 
-###After adding evn variables
+#### After adding env variables
 - scroll down to "on update action" and set it to "Update classes and resources"
 - scroll down to "on frame deactivation" and set it to "Update classes and resources"
 - Then on "Active profiles" type "local"
 - Click on "Apply" and "Ok"
 
-##Create test table to make sure backend and database are connected
+### 5. Create test table to make sure backend and database are connected
 - On the DemoApplication file, under the "Run" method. Include the following code:
 ```bash
 String sql = "CREATE TABLE test(Your First Name) (name int)";
