@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import com.example.demo.model.Cat;
 import com.example.demo.service.CatService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -32,4 +34,17 @@ public class CatController {
     public Cat findGrumpiestCat() {
         return catService.getMostGrumpyCat();
     }
+
+    /*
+        NEW AS OF 7/13/21:
+
+        CHECKPOINT: What does @PostMapping below do? Why do we use a POST request instead of a GET request here?
+
+     */
+
+    @PostMapping("/api/cats/")
+    public Cat createRandomCat(@RequestBody String catSuffix) {
+        return catService.createRandomCat(catSuffix);
+    }
+
 }

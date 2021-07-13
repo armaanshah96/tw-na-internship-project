@@ -53,4 +53,17 @@ public class CatServiceTests {
 
         assertThat(actualCat).isEqualTo(secondCat);
     }
+
+    /*
+        NEW AS OF 7/13/21:
+
+        CHECKPOINT: What is being "verified" here?
+
+     */
+
+    @Test
+    public void createRandomCat_shouldSaveWithACat() {
+        service.createRandomCat("Jr");
+        verify(catRepository, times(1)).save(any(Cat.class));
+    }
 }

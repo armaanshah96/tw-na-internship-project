@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -40,5 +41,19 @@ public class CatControllerTests {
     public void shouldCallServiceForGrumpiestCat() {
         controller.findGrumpiestCat();
         verify(catService, times(1)).getMostGrumpyCat();
+    }
+
+    /*
+        NEW AS OF 7/13/21:
+
+        CHECKPOINT: What is being "verified" here?
+
+     */
+
+    @Test
+    public void shouldCallServiceToCreateRandomCat() {
+        String hi;
+        controller.createRandomCat("III");
+        verify(catService, times(1)).createRandomCat(anyString());
     }
 }
