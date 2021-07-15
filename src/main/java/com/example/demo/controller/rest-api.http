@@ -1,3 +1,7 @@
+GET http://localhost:8080/api/know-your-rights
+Accept: application/json
+
+###
 #  NEW AS OF 7/13/21:
 #      CHECKPOINT: Try running the POST below. Can you figure out what happens?
 #      CHECKPOINT: Can you view the results in Heroku (as teammates for help if you don't know where to go)?
