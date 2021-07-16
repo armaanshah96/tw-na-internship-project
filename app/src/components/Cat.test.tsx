@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import catService from   '../services/catService';
 import Cat from './Cat'
 
@@ -21,7 +21,6 @@ test('when button is clicked, grumpiness level is shown', async () => {
   await waitFor(()=> {
     const grumpinessLevel = screen.getByText(/Grumpiest cat level is: 12/i)
     expect(grumpinessLevel).toBeInTheDocument()
-    expect(buttonElement).not.toBeInTheDocument();
    }); 
 });
 
@@ -31,8 +30,7 @@ test('when button is clicked, button is removed', async () => {
    const buttonElement = screen.getByRole('button', {name: /Cat Info!/i})
    
    fireEvent.click(buttonElement);
-   
-   await waitFor(()=> {
-     expect(buttonElement).not.toBeInTheDocument();
-    }); 
+
+  await waitForElementToBeRemoved(buttonElement)
+  expect(buttonElement).not.toBeInTheDocument();
  });
