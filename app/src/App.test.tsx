@@ -1,9 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
 
 test('renders learn react link', () => {
-  render(<App />);
-const buttonElement = screen.getByRole("button");
-  expect(buttonElement).toBeInTheDocument();
+   const app = render(<App />);
+  expect(app).toMatchSnapshot();
 });
