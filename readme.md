@@ -22,7 +22,8 @@ https://projectlombok.org/
 - Jest - React test runner and assertion library
 
 # Pre-Requisites:
-- npm and node (https://nodejs.org/en/download/) or brew install npm
+- [homebrew](https://docs.brew.sh/installation)
+- [npm and node](https://nodejs.org/en/download/) or `brew install npm`
 - set project SDK settings to java (File->Project Structure, change Project SDK to Java (11)
 
 # To Run App
@@ -60,15 +61,19 @@ Backend:
 # Database initialization steps
 
 ### 1. Create a Heroku account
-- In order for you have access to Heroku, you will need to create an account first.
-- This will help you gain access to the Heroku Database credentials.
-- To create Heroku account make sure to use your TW credentials. Go to this link and create a Heroku account [Heroku](https://id.heroku.com/login).
+- To access Heroku, you will need to [create an account](https://signup.heroku.com/login) first.
+- NOTE: make sure to use your TW credentials. 
 
-### 2. Connect PostgreSQL DB in IntelliJ
-In order to better understand the process of how to connect PostgreSQL DB in IntelliJ
-follow the instructions [in this video](https://www.youtube.com/watch?v=D-WoteCPi14&t=211s)
- Note: You will need the Heroku credentials in order be able to deploy your database in Heroku.
- - Navigate to pom.xml add under the PostgreSQL comment the following:
+### 2. Connect to PostgreSQL DB 
+#### In IntelliJ
+The database has already been deployed (i.e. "launched") remotely. It can now be accessed from a local computer.
+To understand the process of how to connect PostgreSQL DB in IntelliJ,
+follow the instructions [in this video](https://www.youtube.com/watch?v=D-WoteCPi14&t=211s) (starting at 1:40 and ending at 4:10)
+
+#### 2a. Install spring/postgres dependencies: 
+- Navigate to pom.xml add under the PostgreSQL properties comment, add the following:
+      
+
 
     <dependency>
     <groupId>org.springframework.boot</groupId>
@@ -86,8 +91,44 @@ follow the instructions [in this video](https://www.youtube.com/watch?v=D-WoteCP
             <scope>runtime</scope>
         </dependency>
 
-After adding the dependencies make sure to run the next command in your terminal:
-- ./mvnw install
+- After adding the dependencies, run the following command in your terminal:
+`./mvnw install`
+
+#### 2b. Create application-local.properties file
+- Create a file called application-local.properties and copy the contents of application.properties (src/main/java/resources)
+- Then run DemoApplication.
+
+#### 2c. Add env variables to IntelliJ
+- click on edit configurations
+- Make sure to select springboot -> DemoApplication
+- Go to environment variables and click "Edit Environment Variables'
+- Then add all the key and value variables from "Heroku ConfigVars"
+
+Note: Make sure to add all the key and value variables.
+
+#### 2d. Update intellij database configurations
+- scroll down to "on update action" and set it to "Update classes and resources"
+- scroll down to "on frame deactivation" and set it to "Update classes and resources"
+- Then on "Active profiles" type "local"
+- Click on "Apply" and "Ok"
+
+#### 2e. Test Database Connection
+- Follow steps listed in video above to view database from database tab in intellij
+
+#### In CLI
+ - install required packages
+   - `brew tap heroku/brew`
+   - `brew install heroku`
+    - `brew install postgresql`
+- connect to database
+    - `psql --host=<DATABASE_URL> --port=5432 --username=<user> --password --dbname=<db name>`
+        - NOTES: 
+          - configuration values (and password) can be found in heroku under settings -> config vars
+          - dbname is located after the port number in the database url
+- test connection to database
+    - `\dt` to view database tables
+
+#### Database Troubleshooting Steps:
 
 After installation has been completed, follow the next set of steps:
 
@@ -101,38 +142,6 @@ After installation has been completed, follow the next set of steps:
 
 - Note: wait for application to restart.
 
-### 3. Create application-local.properties file
-- Create a file called application-local.properties that is similar to application.properties in (src/main/java/resources)
-- Paste the following code in your application-local.properties file and enter your Heroku credentials which are located in the tw-intern-project under settings and open configvars.
-```bash
-spring.datasource.url= XXXXXX
-spring.datasource.username= XXXXX
-spring.datasource.password= XXXXXX
-```
-
-- After adding your Heroku credentials, make sure to copy the path of the applications-local.properties file
-and paste it into the ".gitignore" file.
-- Then run DemoApplication.
-
-### 4. Add env variables to IntelliJ
-- click on edit configurations
-- Make sure to select springboot -> DemoApplication
-- Go to environment variables and click "Edit Environment Variables'
-- Then add Heroku ConfigVars
-
-Note: Make sure to add all the key and value variables.
-
-#### After adding env variables
-- scroll down to "on update action" and set it to "Update classes and resources"
-- scroll down to "on frame deactivation" and set it to "Update classes and resources"
-- Then on "Active profiles" type "local"
-- Click on "Apply" and "Ok"
-
-### 5. Create test table to make sure backend and database are connected
-- On the DemoApplication file, under the "Run" method. Include the following code:
-```bash
-String sql = "CREATE TABLE test(Your First Name) (name int)";
-```  
 # Intellij tips
 This readme assumes you're using the professional edition of Intellij which should handle a lot of details for you.
 Anything you need to know  can likely be found on the [maven site](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html).
