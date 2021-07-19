@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.CatService;
+import com.example.demo.service.KYRService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,9 @@ class HelloWorldControllerIntegrationTest {
 
     @MockBean
     private CatService catService;
+
+    @MockBean
+    private KYRService cyrService;
 
     @Test
     public void shouldReturnSentMessage() throws Exception {
