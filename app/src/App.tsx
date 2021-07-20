@@ -5,7 +5,7 @@ import Cat from './components/Cat'
 
 function App() {
     return (
-        <div className="App">
+        <div data-testid="custom-element" className="App">
           <header className="App-header">
             <Cat/>
             <TableOfContents />

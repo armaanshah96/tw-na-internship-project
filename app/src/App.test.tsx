@@ -2,7 +2,12 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-/*
+test('renders learn react link', () => {
+  render(<App />);
+const buttonElement = screen.getByTestId('custom-element');
+  expect(buttonElement).toBeInTheDocument());
+
+ /*
     Key concepts: Snapshot testing (see: jest snapshot testing documentation)
 
     CHECKPOINT: So far we've predominantly been creating 'unit tests'. What is a snapshot test and what is it comparing?
@@ -17,3 +22,5 @@ test('renders App component', () => {
   const app = render(<App />);
   expect(app).toMatchSnapshot();
 });
+
+

@@ -1,17 +1,18 @@
 import React, { useState} from 'react';
-import KnowYourRights from "./KnowYourRights";
+import SituationalQuestions from "./SituationalQuestions";
 
 
 function TableOfContents(){
-    const [showContent, setShowContent] = useState(false)
-
+    const [showButton, setShowButton] = useState(false)
     function clickHandler(){
-        setShowContent(true);
+        setShowButton(true);
     }
+
     return(
         <div >
-            {(showContent === false)? <button onClick={clickHandler}>Know Your Rights</button>:null}
-            {showContent && <KnowYourRights/>}
+            {(showButton == false)?  <button onClick={clickHandler}>Know Your Rights</button>:null}
+            {showButton && <SituationalQuestions/>}
+
         </div>
     )
 }
