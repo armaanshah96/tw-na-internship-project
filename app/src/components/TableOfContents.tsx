@@ -12,6 +12,7 @@ function TableOfContents(){
         <div >
             {(showButton == false)?  <button onClick={clickHandler}>Know Your Rights</button>:null}
             {showButton && <SituationalQuestions/>}
+
         </div>
     )
 }

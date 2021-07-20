@@ -1,0 +1,31 @@
+GET http://localhost:8080/api/know-your-rights
+Accept: application/json
+
+###
+#  NEW AS OF 7/13/21:
+#      CHECKPOINT: Try running the POST below. Can you figure out what happens?
+#      CHECKPOINT: Can you view the results in Heroku (as teammates for help if you don't know where to go)?
+
+POST http://localhost:8080/api/cats/
+Content-Type: application/text
+
+ Sr
+
+###
+GET http://localhost:8080/api/cats/grumpiest
+Accept: application/json
+
+###
+POST http://localhost:8080/api/echo
+Content-Type: application/json
+
+"hello hello"
+
+###
+GET http://localhost:8080/api/cats
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+
