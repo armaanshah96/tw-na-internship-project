@@ -7,7 +7,7 @@ function App() {
     return (
         <div data-testid="custom-element" className="App">
           <header className="App-header">
-            <Cat/>
+            {/*<Cat/>*/}
             <TableOfContents />
           </header>
         </div>

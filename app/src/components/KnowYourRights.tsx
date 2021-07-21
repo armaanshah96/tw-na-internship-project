@@ -16,15 +16,22 @@ function KnowYourRights (){
 
 
       return (
-        <p>
+        <div>
+            <h1> Know Your Rights </h1>
             {getKnowYourRightsData()/*this func populates knowYourRightsData*/}
             {knowYourRightsData?.map((x) => {
             return(
                  <div>
-                     <h2>{x.title}</h2>
-                     <h3>{x.summary}</h3>
+
+                    <ul>
+                        <header>Title: {x.title}</header>
+                        <li>Summary: {x.summary}</li>
+                    </ul>
+
                  </div>)})}
-        </p>
+        </div>
+
+
 
     );
 }

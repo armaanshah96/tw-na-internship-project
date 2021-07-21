@@ -9,26 +9,14 @@ function TableOfContents(){
         setShowButton(true);
 =======
 import KnowYourRights from "./KnowYourRights";
-import knowYourRightsService from "../services/knowYourRightsService";
-
-
 
 
 function TableOfContents(){
-
-
 
     const [showContent, setShowContent] = useState(false)
 
     function clickHandler(){
         setShowContent(true);
-<<<<<<< HEAD
-
-    }
-    function getKnowYourRightsData() {
-        knowYourRightsService.getKnowYourRightsContent().then(temp => setKnowYourRightsData(temp))
-
-    }
 
     return(
         <div >
