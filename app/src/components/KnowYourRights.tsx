@@ -1,15 +1,24 @@
 import React, {useState} from 'react';
 import knowYourRightsService from "../services/knowYourRightsService";
-import {KnowYourRightsType} from "./TableOfContents";
+
+
+export type KnowYourRightsType = [{ id: number, title: string, summary: string}] | undefined;
+
+function KnowYourRights (){
+
+    const [knowYourRightsData, setKnowYourRightsData] = useState<KnowYourRightsType>(undefined)
+
+
+    function getKnowYourRightsData() {
+        knowYourRightsService.getKnowYourRightsContent().then(temp => setKnowYourRightsData(temp))
+    }
 
 
 
-
-const KnowYourRights = (props:any) => {
-
-
-    return (
-        <p>{props.data.map((x:any) => {
+      return (
+        <p>
+            {getKnowYourRightsData()/*this func populates knowYourRightsData*/}
+            {knowYourRightsData?.map((x) => {
             return(
                  <div>
                      <h2>{x.title}</h2>
@@ -19,4 +28,5 @@ const KnowYourRights = (props:any) => {
 
     );
 }
+
 export default KnowYourRights;
