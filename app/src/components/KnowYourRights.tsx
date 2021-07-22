@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import knowYourRightsService from "../services/knowYourRightsService";
 
 
@@ -9,23 +9,25 @@ function KnowYourRights (){
     const [knowYourRightsData, setKnowYourRightsData] = useState<KnowYourRightsType>(undefined)
 
 
-    function getKnowYourRightsData() {
-        knowYourRightsService.getKnowYourRightsContent().then(temp => setKnowYourRightsData(temp))
-    }
+    useEffect(() => {
+        getKnowYourRightsData();
+      }, []);
 
-
+      const getKnowYourRightsData = async () => {
+        const result = await knowYourRightsService.getKnowYourRightsContent();
+        setKnowYourRightsData(result);
+      }
 
       return (
-        <div>
+        <div data-testid="kyrContent" >
             <h1> Know Your Rights </h1>
-            {getKnowYourRightsData()/*this func populates knowYourRightsData*/}
             {knowYourRightsData?.map((x) => {
             return(
-                 <div>
+                 <div key={x.id} >
 
                     <ul>
-                        <header>Title: {x.title}</header>
-                        <li>Summary: {x.summary}</li>
+                        <header >Title: {x.title}</header>
+                        <li >Summary: {x.summary}</li>
                     </ul>
 
                  </div>)})}

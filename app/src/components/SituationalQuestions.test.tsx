@@ -14,14 +14,14 @@ test('Situation: Clicking targeted user button shows content and removes button'
     expect(targetedUser).toBeInTheDocument()
     userEvent.click(targetedUser)
     expect(targetedUser).not.toBeInTheDocument()
-    const content= screen.getByText(/Miranda Rights/i);
-    expect(content).toBeInTheDocument()
+    const htmlElement = screen.getByTestId('kyrContent');
+    expect(htmlElement).toBeInTheDocument();
 });
 
 test('Situation: Clicking community member button shows content and removes button', () => {
     expect(communityMUser).toBeInTheDocument()
     userEvent.click(communityMUser)
     expect(communityMUser).not.toBeInTheDocument()
-    const content= screen.getByText(/Miranda Rights/i);
-    expect(content).toBeInTheDocument()
+    const htmlElement = screen.getByTestId('kyrContent');
+    expect(htmlElement).toBeInTheDocument();
 });
