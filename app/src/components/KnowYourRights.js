@@ -1,13 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import knowYourRightsService from "../services/knowYourRightsService";
 
-
-export type KnowYourRightsType = [{ id: number, title: string, summary: string}] | undefined;
-
 function KnowYourRights (){
 
-    const [knowYourRightsData, setKnowYourRightsData] = useState<KnowYourRightsType>(undefined)
-
+    const [knowYourRightsData, setKnowYourRightsData] = useState(undefined)
 
     useEffect(() => {
         getKnowYourRightsData();
@@ -32,9 +28,6 @@ function KnowYourRights (){
 
                  </div>)})}
         </div>
-
-
-
     );
 }
 

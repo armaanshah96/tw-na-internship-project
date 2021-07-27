@@ -3,7 +3,7 @@ import { render, screen, fireEvent, act } from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
 import TableOfContents from './TableOfContents';
 describe('KYR Button', ()=>{
-  let button:any;
+  let button;
   beforeEach(()=> {
     render(<TableOfContents/>);
     button=screen.getByText(/Know Your Rights/i)

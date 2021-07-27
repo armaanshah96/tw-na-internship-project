@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import catService from '../services/catService'
 
-export type CatType = { id: number, name: string, color: string, grumpiness: number } | undefined;
-
 function Cat() {
 
     /*
@@ -15,7 +13,7 @@ function Cat() {
         Topics uncovered: CatType and how Typescript plays a role here - if you have time try to understand this piece
      */
 
-    const [catData, setCatData] = useState<CatType>(undefined)
+    const [catData, setCatData] = useState(undefined)
 
     function getCatData() {
         catService.getGrumpiestCat().then(json => setCatData(json))

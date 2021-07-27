@@ -2,8 +2,8 @@ import React from "react";
 import {render, screen} from '@testing-library/react';
 import SituationalQuestions from "./SituationalQuestions";
 import userEvent from "@testing-library/user-event";
-let targetedUser:any;
-let communityMUser:any;
+let targetedUser;
+let communityMUser;
 beforeEach(()=> {
     render(<SituationalQuestions/>);
     targetedUser=screen.getByText(/Targeted User/i)

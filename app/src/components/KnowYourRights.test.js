@@ -3,10 +3,7 @@ import {fireEvent, render, screen, waitFor} from '@testing-library/react';
 import KnowYourRights from './KnowYourRights';
 import knowYourRightsService from "../services/knowYourRightsService";
 
-
-
 jest.mock('../services/knowYourRightsService');
-
 
 test('content is display when KYR component is rendered', async () => {
   knowYourRightsService.getKnowYourRightsContent = jest.fn().mockResolvedValueOnce(
