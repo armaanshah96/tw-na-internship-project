@@ -6,22 +6,20 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {green} from "@material-ui/core/colors";
 import {Box} from "@material-ui/core";
+import AddInfo from "./AddInfo";
 
 
 const useStyles = makeStyles((theme) => ({
 
-        root: {
-            width: '100%',
-        },
-        heading: {
-            fontSize: theme.typography.pxToRem(15),
-            fontWeight: theme.typography.fontWeightRegular,
-        },
-
-    })
-);
+    root: {
+        width: '100%',
+    },
+    heading: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightRegular,
+    },
+}));
 
 
 function KnowYourRights() {
@@ -41,6 +39,7 @@ function KnowYourRights() {
         <div data-testid="kyrContent">
 
             <h1> Know Your Rights </h1>
+
             {knowYourRightsData?.map((x) => {
                 return (
                     <div key={x.id} className={classes.root}>
@@ -59,7 +58,10 @@ function KnowYourRights() {
                                 </AccordionSummary>
 
                                 <AccordionDetails>
-                                    <Typography className={classes.heading}> Additional Info: </Typography>
+                                    <Typography className={classes.heading}>
+                                        Additional Info: {x.additionalInfoList.map((addInfoItem) => <AddInfo
+                                        item={addInfoItem}/>)}
+                                    </Typography>
                                 </AccordionDetails>
                                 <AccordionDetails>
                                     <Typography className={classes.heading}> References: </Typography>
