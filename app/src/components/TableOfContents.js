@@ -1,5 +1,8 @@
 import React, { useState} from 'react';
 import SituationalQuestions from "./SituationalQuestions";
+import Button from '@material-ui/core/Button';
+
+
 
 
 function TableOfContents(){
@@ -11,7 +14,7 @@ function TableOfContents(){
 
     return(
         <div >
-            {(showButton == false)?  <button onClick={clickHandler}>Know Your Rights</button>:null}
+            {(showButton == false)?  <Button variant="contained" color="primary" onClick={clickHandler}>Know Your Rights</Button>:null}
             {showButton && <SituationalQuestions/>}
 
 
