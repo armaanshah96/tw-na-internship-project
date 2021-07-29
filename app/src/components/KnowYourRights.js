@@ -6,6 +6,8 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import {green} from "@material-ui/core/colors";
+import {Box} from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -17,10 +19,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
-  changeColor:{
-  flexDirection: "column"
 
-  }
 
 })
 );
@@ -43,10 +42,11 @@ function KnowYourRights (){
       return (
                 <div data-testid="kyrContent" >
 
-                    <h1> Know Your Rights </h1>
+                    <h1 > Know Your Rights </h1>
                     {knowYourRightsData?.map((x) => {
                         return (
                             <div className={classes.root}>
+                            <Box mx={5} my={2} >
                                 <Accordion >
                                     <AccordionSummary
                                         expandIcon={<ExpandMoreIcon/>}
@@ -54,14 +54,16 @@ function KnowYourRights (){
                                         id="panel1a-header"
                                     >
                                         <Typography>Title: {x.title} Summary: {x.summary} </Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
+                                    </AccordionSummary >
 
-                                         <Typography > Additional Info: </Typography>
-                                         <Typography > References: </Typography>
-
-                                    </AccordionDetails>
+                                     <AccordionDetails>
+                                        <Typography className={classes.heading}> Additional Info: </Typography>
+                                     </AccordionDetails>
+                                     <AccordionDetails>
+                                        <Typography className={classes.heading}> References: </Typography>
+                                     </AccordionDetails>
                                 </Accordion>
+                            </Box>
                             </div>
 
 

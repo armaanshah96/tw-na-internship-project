@@ -14,8 +14,8 @@ function SituationalQuestions() {
     return (
     <Box component="span" m={1}>
     {showUsers?
-      <><Button variant="contained" color="secondary" onClick={clickHandlerUsers}>Community Member User</Button>
-        <Button variant="contained" color="secondary" onClick={clickHandlerUsers}>Targeted User</Button></>:
+      <Box mx={5} my={6}><Button variant="contained" color="secondary" onClick={clickHandlerUsers}>Community Member User</Button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <Button variant="contained" color="secondary" onClick={clickHandlerUsers}>Targeted User</Button></Box>:
         <KnowYourRights/>}
     </Box>
     )
