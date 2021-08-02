@@ -19,6 +19,17 @@ const useStyles = makeStyles((theme) => ({
         fontSize: theme.typography.pxToRem(15),
         fontWeight: theme.typography.fontWeightRegular,
     },
+    addInfoHeading:{
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightMedium,
+        textAlign: "left"
+    },
+    addInfoDetails: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightRegular,
+        textAlign: "left"
+
+    }
 }));
 
 
@@ -53,20 +64,21 @@ function KnowYourRights() {
                                 >
                                     <h5>{x.title}
                                         <Typography className={classes.heading}>
-                                            Summary: {x.summary}
+                                            {x.summary}
                                         </Typography>
                                     </h5>
                                 </AccordionSummary>
 
-                                <AccordionDetails>
-                                    <Typography className={classes.heading}>
-                                        Additional Info: {x.additionalInfoList.map((addInfoItem) => <AddInfo
-                                        item={addInfoItem}/>)}
+                                <AccordionDetails className={classes.heading}>
+
+                                    <Typography>
+                                        {<ul className={classes.addInfoHeading}  > Additional Info {x.additionalInfoList.map((addInfoItem) =>
+                                            <li className={classes.addInfoDetails}><AddInfo
+                                                item={addInfoItem}/></li>)}</ul>
+                                        }
                                     </Typography>
                                 </AccordionDetails>
-                                <AccordionDetails>
-                                    <Typography className={classes.heading}> References: </Typography>
-                                </AccordionDetails>
+
                             </Accordion>
                         </Box>
                     </div>
