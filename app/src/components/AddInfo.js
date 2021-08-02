@@ -3,7 +3,7 @@ import React from 'react';
 function AddInfo({item}) {
 
     return(
-        <div>{item.text}</div>
+        <>{item.text}</>
     )
 }
 

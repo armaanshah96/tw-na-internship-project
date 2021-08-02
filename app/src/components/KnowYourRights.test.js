@@ -12,11 +12,13 @@ test('content is display when KYR component is rendered', async () => {
     id: 1,
     title: 'someTitle1',
     summary: 'someSummary1',
+    additionalInfoList: ['a']
   },
   {
     id: 2,
     title: 'someTitle2',
     summary: 'someSummary2',
+    additionalInfoList: ['a', 'b']
   }
   ]);
   render(<KnowYourRights/>);
@@ -27,6 +29,10 @@ test('content is display when KYR component is rendered', async () => {
     const title2 = screen.getByText(/someTitle2/i)
     const summary2 = screen.getByText(/someSummary2/i)
 
+    const byRole = screen.getAllByRole("listitem")
+    expect(byRole).toHaveLength(3)
+
+
     expect(title1).toBeInTheDocument()
     expect(summary1).toBeInTheDocument()
     expect(title2).toBeInTheDocument()
@@ -34,6 +40,8 @@ test('content is display when KYR component is rendered', async () => {
 
 
   });
+
+
 });
 
 

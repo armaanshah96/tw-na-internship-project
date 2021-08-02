@@ -40,6 +40,7 @@ function KnowYourRights() {
 
             <h1> Know Your Rights </h1>
 
+
             {knowYourRightsData?.map((x) => {
                 return (
                     <div key={x.id} className={classes.root}>
@@ -71,6 +72,7 @@ function KnowYourRights() {
                     </div>
                 )
             })}
+
         </div>
 
     )
