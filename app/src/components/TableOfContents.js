@@ -14,7 +14,7 @@ function TableOfContents(){
 
     return(
         <div >
-            {(showButton == false)?  <Button variant="contained" color="primary" onClick={clickHandler}>Know Your Rights</Button>:null}
+            {(showButton == false)?  <Button variant="contained" color="secondary" onClick={clickHandler}>Know Your Rights</Button>:null}
             {showButton && <SituationalQuestions/>}
 
 
