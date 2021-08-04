@@ -6,28 +6,38 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {green} from "@material-ui/core/colors";
 import {Box} from "@material-ui/core";
+import AddInfo from "./AddInfo";
 
 
 const useStyles = makeStyles((theme) => ({
 
-        root: {
-            width: '100%',
-        },
-        heading: {
-            fontSize: theme.typography.pxToRem(15),
-            fontWeight: theme.typography.fontWeightRegular,
-        },
+    root: {
+        width: '100%',
+    },
+    heading: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightRegular,
+    },
+    addInfoHeading: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightMedium,
+        textAlign: "left"
+    },
+    addInfoDetails: {
+        fontSize: theme.typography.pxToRem(15),
+        fontWeight: theme.typography.fontWeightRegular,
+        textAlign: "left"
 
-    })
-);
+    }
+}));
 
 
 function KnowYourRights() {
 
     const [knowYourRightsData, setKnowYourRightsData] = useState(undefined)
     const classes = useStyles();
+
 
     useEffect(() => {
         getKnowYourRightsData();
@@ -41,11 +51,13 @@ function KnowYourRights() {
         <div data-testid="kyrContent">
 
             <h1> Know Your Rights </h1>
+
+
             {knowYourRightsData?.map((x) => {
                 return (
-                    <div key={x.id} className={classes.root}>
+                    <div  className={classes.root}>
                         <Box mx={5} my={2}>
-                            <Accordion>
+                            <Accordion >
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon/>}
                                     aria-controls="panel1a-content"
@@ -53,26 +65,34 @@ function KnowYourRights() {
                                 >
                                     <h5>{x.title}
                                         <Typography className={classes.heading}>
-                                            Summary: {x.summary}
+                                            {x.summary}
                                         </Typography>
                                     </h5>
                                 </AccordionSummary>
 
-                                <AccordionDetails>
-                                    <Typography className={classes.heading}> Additional Info: </Typography>
-                                </AccordionDetails>
-                                <AccordionDetails>
-                                    <Typography className={classes.heading}> References: </Typography>
+                                <AccordionDetails className={classes.heading}>
+
+                                        <ul key={x.id} className={classes.addInfoHeading} > Additional
+                                            Info {x.additionalInfoList.map((addInfoItem) => {
+                                                return (
+                                                     <li
+                                                        key={addInfoItem.id}
+                                                        data-testid="addInfo"
+                                                        className={classes.addInfoDetails}><AddInfo
+                                                        item={addInfoItem}/></li>)
+                                            })}
+                                        </ul>
                                 </AccordionDetails>
                             </Accordion>
                         </Box>
                     </div>
                 )
             })}
+
         </div>
 
     )
-}
+};
 
 
 export default KnowYourRights;

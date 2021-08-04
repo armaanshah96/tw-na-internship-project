@@ -13,16 +13,19 @@ Object {
           class="App-header"
         >
           <div>
-            <p>
-              click here for info on the level of grumpiness for the grumpiest cat
-            </p>
-            <button>
-              Cat Info!
-            </button>
-          </div>
-          <div>
-            <button>
-              Know Your Rights
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Know Your Rights
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
             </button>
           </div>
         </header>
@@ -38,16 +41,19 @@ Object {
         class="App-header"
       >
         <div>
-          <p>
-            click here for info on the level of grumpiness for the grumpiest cat
-          </p>
-          <button>
-            Cat Info!
-          </button>
-        </div>
-        <div>
-          <button>
-            Know Your Rights
+          <button
+            class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiButton-label"
+            >
+              Know Your Rights
+            </span>
+            <span
+              class="MuiTouchRipple-root"
+            />
           </button>
         </div>
       </header>
