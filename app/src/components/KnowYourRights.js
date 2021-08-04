@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: theme.typography.pxToRem(15),
         fontWeight: theme.typography.fontWeightRegular,
     },
-    addInfoHeading:{
+    addInfoHeading: {
         fontSize: theme.typography.pxToRem(15),
         fontWeight: theme.typography.fontWeightMedium,
         textAlign: "left"
@@ -38,6 +38,7 @@ function KnowYourRights() {
     const [knowYourRightsData, setKnowYourRightsData] = useState(undefined)
     const classes = useStyles();
 
+
     useEffect(() => {
         getKnowYourRightsData();
     }, []);
@@ -54,9 +55,9 @@ function KnowYourRights() {
 
             {knowYourRightsData?.map((x) => {
                 return (
-                    <div key={x.id} className={classes.root}>
+                    <div  className={classes.root}>
                         <Box mx={5} my={2}>
-                            <Accordion>
+                            <Accordion >
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon/>}
                                     aria-controls="panel1a-content"
@@ -71,14 +72,17 @@ function KnowYourRights() {
 
                                 <AccordionDetails className={classes.heading}>
 
-                                    <Typography>
-                                        {<ul className={classes.addInfoHeading}  > Additional Info {x.additionalInfoList.map((addInfoItem) =>
-                                            <li className={classes.addInfoDetails}><AddInfo
-                                                item={addInfoItem}/></li>)}</ul>
-                                        }
-                                    </Typography>
+                                        <ul key={x.id} className={classes.addInfoHeading} > Additional
+                                            Info {x.additionalInfoList.map((addInfoItem) => {
+                                                return (
+                                                     <li
+                                                        key={addInfoItem.id}
+                                                        data-testid="addInfo"
+                                                        className={classes.addInfoDetails}><AddInfo
+                                                        item={addInfoItem}/></li>)
+                                            })}
+                                        </ul>
                                 </AccordionDetails>
-
                             </Accordion>
                         </Box>
                     </div>
@@ -88,7 +92,7 @@ function KnowYourRights() {
         </div>
 
     )
-}
+};
 
 
 export default KnowYourRights;
