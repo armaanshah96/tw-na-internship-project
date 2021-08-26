@@ -1,4 +1,8 @@
-import React, {useState, useEffect} from 'react';
+/*
+ * © 2021 Thoughtworks, Inc.
+ */
+
+import React, {useEffect, useState} from 'react';
 import knowYourRightsService from "../services/knowYourRightsService";
 import {makeStyles} from '@material-ui/core/styles';
 import Accordion from '@material-ui/core/Accordion';

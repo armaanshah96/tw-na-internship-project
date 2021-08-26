@@ -1,7 +1,12 @@
+/*
+ * © 2021 Thoughtworks, Inc.
+ */
+
 import React from 'react';
-import { render, screen, fireEvent, act } from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
 import TableOfContents from './TableOfContents';
+
 describe('KYR Button', ()=>{
   let button;
   beforeEach(()=> {

@@ -1,8 +1,11 @@
+/*
+ * © 2021 Thoughtworks, Inc.
+ */
+
 import React from 'react';
 import './App.css';
 import TableOfContents from './components/TableOfContents'
-import Cat from './components/Cat'
-import { ThemeProvider } from '@material-ui/core/styles'
+import {ThemeProvider} from '@material-ui/core/styles'
 import theme from "./theme";
 import {CssBaseline} from "@material-ui/core";
 

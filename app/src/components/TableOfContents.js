@@ -1,9 +1,10 @@
-import React, { useState} from 'react';
+/*
+ * © 2021 Thoughtworks, Inc.
+ */
+
+import React, {useState} from 'react';
 import SituationalQuestions from "./SituationalQuestions";
 import Button from '@material-ui/core/Button';
-
-
-
 
 function TableOfContents(){
     const [showButton, setShowButton] = useState(false)

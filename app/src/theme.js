@@ -1,5 +1,9 @@
-import { createTheme } from '@material-ui/core/styles';
-import { green, grey, red } from '@material-ui/core/colors';
+/*
+ * © 2021 Thoughtworks, Inc.
+ */
+
+import {createTheme} from '@material-ui/core/styles';
+import {green, grey, red} from '@material-ui/core/colors';
 
 const rawTheme = createTheme({
   palette: {

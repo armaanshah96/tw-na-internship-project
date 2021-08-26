@@ -1,3 +1,7 @@
+/*
+ * © 2021 Thoughtworks, Inc.
+ */
+
 import React from 'react';
 import {fireEvent, render, screen, waitFor, waitForElementToBeRemoved} from '@testing-library/react';
 import catService from '../services/catService';

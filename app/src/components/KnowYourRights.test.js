@@ -1,8 +1,11 @@
+/*
+ * © 2021 Thoughtworks, Inc.
+ */
+
 import React from 'react';
-import {fireEvent, getAllByTestId, getByTestId, render, screen, waitFor} from '@testing-library/react';
+import {render, screen, waitFor} from '@testing-library/react';
 import KnowYourRights from './KnowYourRights';
 import knowYourRightsService from "../services/knowYourRightsService";
-import {Accordion} from "@material-ui/core";
 
 
 jest.mock('../services/knowYourRightsService');

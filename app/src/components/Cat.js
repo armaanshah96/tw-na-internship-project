@@ -1,3 +1,7 @@
+/*
+ * © 2021 Thoughtworks, Inc.
+ */
+
 import React, {useState} from 'react';
 import catService from '../services/catService'
 

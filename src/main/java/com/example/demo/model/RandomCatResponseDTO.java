@@ -1,3 +1,7 @@
+/*
+ * © 2021 Thoughtworks, Inc.
+ */
+
 package com.example.demo.model;
 
 import lombok.Data;

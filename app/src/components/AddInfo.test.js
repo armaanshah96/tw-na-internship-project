@@ -1,6 +1,9 @@
-import knowYourRightsService from "../services/knowYourRightsService";
+/*
+ * © 2021 Thoughtworks, Inc.
+ */
+
 import AddInfo from "./AddInfo";
-import {render, waitFor, screen} from "@testing-library/react";
+import {render, screen, waitFor} from "@testing-library/react";
 
 test("Render add-info information", async() => {
    const dummyAddInfo = {text: 'helloMock1'}
