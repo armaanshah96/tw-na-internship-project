@@ -1,3 +1,5 @@
+**Note:** We've temporarily made the Thoughtworks pilot internship project repository available here. In the near future this will move to a Thoughtworks organization on Github.
+
 # Hello!
 
 This repository was created as baseline for your project.
@@ -12,8 +14,6 @@ This repository was created as baseline for your project.
   hasn't been determined, and for a minimal work poc, this grouping practice may be overkill.
 
 # Technologies
-- Lombok - Java preprocessor, provides utility annotations that make developing in Java more pleasant  -
-https://projectlombok.org/
 - Spring boot - Java server framework
   - H2 database - in-memory database, is torn down when the app closes. I suggest modifying the `application.properties` to save to a file or change to another database
 - AssertJ - Assertion library that provides extra chainable assertions on top of JUnit
